@@ -24,18 +24,10 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "result": {
-                      "type": "array"
-                    },
-                    "error": {
-                      "type": "string"
-                    }
+                    "success": { "type": "boolean" },
+                    "message": { "type": "string" },
+                    "result": { "type": "array" },
+                    "error": { "type": "string" }
                   }
                 }
               }
@@ -56,15 +48,9 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "error": {
-                      "type": "string"
-                    }
+                    "success": { "type": "boolean" },
+                    "message": { "type": "string" },
+                    "error": { "type": "string" }
                   }
                 }
               }
@@ -85,18 +71,12 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
+                    "success": { "type": "boolean" },
                     "messages": {
                       "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Message"
-                      }
+                      "items": { "$ref": "#/components/schemas/Message" }
                     },
-                    "error": {
-                      "type": "string"
-                    }
+                    "error": { "type": "string" }
                   }
                 }
               }
@@ -138,18 +118,10 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "result": {
-                      "type": "object"
-                    },
-                    "error": {
-                      "type": "string"
-                    }
+                    "success": { "type": "boolean" },
+                    "message": { "type": "string" },
+                    "result": { "type": "object" },
+                    "error": { "type": "string" }
                   }
                 }
               }
@@ -170,18 +142,38 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "success": {
-                      "type": "boolean"
-                    },
+                    "success": { "type": "boolean" },
                     "data": {
                       "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/User"
-                      }
+                      "items": { "$ref": "#/components/schemas/User" }
                     },
-                    "error": {
-                      "type": "string"
-                    }
+                    "error": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+     "/api/messaeg2": {
+      "get": {
+        "summary": "获取用户列表",
+        "tags": ["Users"],
+        "responses": {
+          "200": {
+            "description": "用户列表",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "data": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/User" }
+                    },
+                    "error": { "type": "string" }
                   }
                 }
               }
@@ -196,53 +188,26 @@
       "Message": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "content": {
-            "type": "string"
-          },
-          "author": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          }
+          "id": { "type": "integer" },
+          "content": { "type": "string" },
+          "author": { "type": "string" },
+          "created_at": { "type": "string", "format": "date-time" }
         }
       },
       "User": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          }
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "created_at": { "type": "string", "format": "date-time" }
         }
       }
     }
   },
   "tags": [
-    {
-      "name": "Database",
-      "description": "数据库相关操作"
-    },
-    {
-      "name": "Messages",
-      "description": "消息管理"
-    },
-    {
-      "name": "Users",
-      "description": "用户管理"
-    }
+    { "name": "Database", "description": "数据库相关操作" },
+    { "name": "Messages", "description": "消息管理" },
+    { "name": "Users", "description": "用户管理" }
   ]
 }
